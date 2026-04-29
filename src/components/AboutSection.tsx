@@ -102,10 +102,10 @@ export function AboutSection() {
                 </span>. I build user-friendly websites and web systems that are easy to manage, fast, and built to last.
               </p>
               <p>
-                My work ranges from <strong className="text-foreground">custom WordPress websites</strong> — corporate platforms, e-commerce stores, and business portfolios — to <strong className="text-foreground">full-stack web applications</strong> built with Python Flask, MySQL, and Bootstrap. I've delivered real projects for real clients including a biotech company, a fashion brand, a martial arts club, and a college-level system.
+                My work ranges from <strong className="text-foreground">custom WordPress websites</strong> corporate platforms, e-commerce stores, and business portfolios to <strong className="text-foreground">full-stack web applications</strong> built with Python Flask, MySQL, and Bootstrap. I've delivered real projects for real clients including a biotech company, a fashion brand, a martial arts club, and a college-level system.
               </p>
               <p>
-                Beyond websites, I build data-driven backend systems, complaint management tools, and AI-powered attendance solutions. I care about <strong className="text-primary">clean code</strong>, <strong className="text-primary">reliable delivery</strong>, and projects that perform in the real world — not just in demos.
+                Beyond websites, I build data-driven backend systems, complaint management tools, and AI-powered attendance solutions. I care about <strong className="text-primary">clean code</strong>, <strong className="text-primary">reliable delivery</strong>, and projects that perform in the real world not just in demos.
               </p>
               <p>
                 I'm currently open to freelance projects, long-term partnerships, and technical collaborations where I can contribute meaningful engineering work and grow alongside the team.
