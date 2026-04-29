@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+==========================================================================
+【AI HANDOVER NOTE】
+1. DESIGN PHILOSOPHY:
+   - Neo-Futurism meets Developer Minimalism: This is a premium dark-mode-first portfolio for a serious full-stack engineer. The design language is 'Intelligent Darkness' — deep space blacks with electric cyan/purple accents that feel like code syntax highlighting brought to life.
+   - Visual style: Glassmorphism 2.0 with physicality. Cards use subtle backdrop-blur (8-12px), translucent borders (rgba white 0.08), and rim-light glow effects on hover. The aesthetic is 'production-grade terminal meets high-end SaaS dashboard'.
+   - Why this style: Zelalem's brand demands trust, technical depth, and modernity. The dark palette reduces eye strain (developer-friendly), while cyan/purple gradients signal innovation and AI/tech expertise. This isn't a generic portfolio — it's a personal brand system for a 2026 senior engineer.
+
+2. TYPOGRAPHY:
+   - Space Grotesk (headings): Geometric, slightly futuristic, excellent for gradient text overlays. Its technical precision matches the developer aesthetic without feeling cold.
+   - Inter (body): Industry-standard UI font with exceptional readability at all sizes. Neutral enough to let content shine, professional enough for enterprise clients.
+   - JetBrains Mono (code/data): Used sparingly for skill tags, tech stack labels, and any inline code snippets. Reinforces developer credibility.
+
+3. COLOR SYSTEM:
+   - Brand primary: Electric Cyan (H=195°) — the hero accent. Maps to --primary for CTAs, --accent for interactive elements, --ring for focus states. This hue evokes innovation, AI, and digital intelligence.
+   - Brand secondary: Purple (H=270°) — used for gradient overlays, secondary CTAs, and AI/ML-related content. Creates depth when paired with cyan.
+   - Semantic colors: Success (emerald H=160°) for deployment/DevOps badges, Warning (amber H=45°) for alerts, Destructive (red H=10°) for errors. All tuned for dark mode with higher chroma.
+   - Background strategy: Near-black (L=0.08) with subtle blue undertone (C=0.01) to avoid pure #000 harshness. Cards at L=0.12 with alpha transparency for layering.
+
+4. USAGE GUIDE:
+   - Layout: Full-width sections with max-width containers (1280px). Hero is 100vh with animated grid background. Use Bento-style card grids for Projects/Skills sections.
+   - Effects: Apply backdrop-blur-md (12px) to navigation and cards. Use box-shadow with cyan glow (0 0 30px oklch(0.7 0.15 195 / 0.15)) on hover. Gradient text for section headings: bg-gradient-to-r from-cyan-400 to-purple-500.
+   - Animations: Smooth scale transforms (scale-105) on card hover, stagger animations for skill tags, parallax scroll for hero background.
+   - Accessibility: Maintain 7:1 contrast for body text (foreground L=0.95), 4.5:1 for muted text (L=0.65). Ensure focus rings are visible (--ring with 2px offset).
+   - Special rules: Use --sidebar tokens for any side navigation or floating panels. Chart colors (chart_1-5) are pre-tuned for data visualization in project dashboards.
+==========================================================================
+*/
+
+:root {
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  
+  /* Radius */
+  --radius: 1rem;
+
+  /* Core UI Tokens */
+  --background: oklch(0.99 0.002 240);
+  --foreground: oklch(0.15 0.01 240);
+  --card: oklch(0.98 0.005 240);
+  --card-foreground: oklch(0.18 0.01 240);
+  --popover: oklch(0.99 0.002 240);
+  --popover-foreground: oklch(0.15 0.01 240);
+  --primary: oklch(0.55 0.22 195);
+  --primary-foreground: oklch(0.99 0.002 195);
+  --secondary: oklch(0.92 0.01 240);
+  --secondary-foreground: oklch(0.20 0.01 240);
+  --muted: oklch(0.94 0.008 240);
+  --muted-foreground: oklch(0.48 0.02 240);
+  --accent: oklch(0.60 0.20 270);
+  --accent-foreground: oklch(0.99 0.002 270);
+  --destructive: oklch(0.58 0.22 10);
+  --destructive-foreground: oklch(0.99 0.002 10);
+  --border: oklch(0.88 0.01 240);
+  --input: oklch(0.90 0.01 240);
+  --ring: oklch(0.55 0.22 195);
+  
+  /* Chart Tokens */
+  --chart-1: oklch(0.55 0.22 195);
+  --chart-2: oklch(0.60 0.20 270);
+  --chart-3: oklch(0.62 0.18 160);
+  --chart-4: oklch(0.65 0.18 45);
+  --chart-5: oklch(0.58 0.20 320);
+  
+  /* Sidebar Tokens */
+  --sidebar: oklch(0.97 0.005 240);
+  --sidebar-foreground: oklch(0.20 0.01 240);
+  --sidebar-primary: oklch(0.55 0.22 195);
+  --sidebar-primary-foreground: oklch(0.99 0.002 195);
+  --sidebar-accent: oklch(0.92 0.01 240);
+  --sidebar-accent-foreground: oklch(0.20 0.01 240);
+  --sidebar-border: oklch(0.88 0.01 240);
+  --sidebar-ring: oklch(0.55 0.22 195);
+}
+
+.dark {
+  --background: oklch(0.08 0.01 240);
+  --foreground: oklch(0.95 0.005 240);
+  --card: oklch(0.12 0.015 240);
+  --card-foreground: oklch(0.93 0.008 240);
+  --popover: oklch(0.10 0.012 240);
+  --popover-foreground: oklch(0.95 0.005 240);
+  --primary: oklch(0.70 0.18 195);
+  --primary-foreground: oklch(0.10 0.01 195);
+  --secondary: oklch(0.18 0.02 240);
+  --secondary-foreground: oklch(0.92 0.008 240);
+  --muted: oklch(0.20 0.02 240);
+  --muted-foreground: oklch(0.65 0.03 240);
+  --accent: oklch(0.68 0.22 270);
+  --accent-foreground: oklch(0.10 0.01 270);
+  --destructive: oklch(0.62 0.25 10);
+  --destructive-foreground: oklch(0.98 0.005 10);
+  --border: oklch(0.22 0.02 240);
+  --input: oklch(0.20 0.02 240);
+  --ring: oklch(0.70 0.18 195);
+  
+  /* Chart Tokens */
+  --chart-1: oklch(0.70 0.18 195);
+  --chart-2: oklch(0.68 0.22 270);
+  --chart-3: oklch(0.68 0.20 160);
+  --chart-4: oklch(0.72 0.20 45);
+  --chart-5: oklch(0.65 0.22 320);
+  
+  /* Sidebar Tokens */
+  --sidebar: oklch(0.10 0.012 240);
+  --sidebar-foreground: oklch(0.92 0.008 240);
+  --sidebar-primary: oklch(0.70 0.18 195);
+  --sidebar-primary-foreground: oklch(0.10 0.01 195);
+  --sidebar-accent: oklch(0.18 0.02 240);
+  --sidebar-accent-foreground: oklch(0.92 0.008 240);
+  --sidebar-border: oklch(0.22 0.02 240);
+  --sidebar-ring: oklch(0.70 0.18 195);
+}
+
+@theme inline {
+  /* Shadcn Core Mapping */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Charts Mapping */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Sidebar Mapping */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Typography */
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  /* Radius */
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply scroll-smooth antialiased;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans min-h-screen;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  code, pre {
+    @apply font-mono;
+  }
+
+  ::selection {
+    @apply bg-primary/20 text-primary;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/20 rounded-full hover:bg-muted-foreground/40;
+  }
+}
+
+/* ============================================================
+   Portfolio-specific custom additions
+   ============================================================ */
+
+/* Additional custom colors */
+:root {
+  --color-cyan-400: oklch(0.74 0.17 195);
+  --color-purple-500: oklch(0.64 0.26 270);
+  --color-emerald-500: oklch(0.65 0.22 160);
+}
+
+@theme inline {
+  --font-heading: 'Space Grotesk', 'Inter', sans-serif;
+  --color-cyan: oklch(0.70 0.18 195);
+  --color-violet: oklch(0.68 0.24 290);
+  --color-emerald-glow: oklch(0.68 0.20 160);
+}
+
+@layer base {
+  html.dark {
+    color-scheme: dark;
+  }
+}
+
+@layer utilities {
+  .text-gradient-cyan-purple {
+    background: linear-gradient(135deg, oklch(0.70 0.18 195) 0%, oklch(0.68 0.22 270) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 30px oklch(0.70 0.18 195 / 0.2);
+  }
+
+  .glow-cyan-hover:hover {
+    box-shadow: 0 0 40px oklch(0.70 0.18 195 / 0.3);
+  }
+
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, oklch(0.70 0.18 195 / 0.3), transparent);
+  }
+}
