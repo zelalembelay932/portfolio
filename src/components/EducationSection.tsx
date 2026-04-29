@@ -82,7 +82,7 @@ export function EducationSection() {
             <div>
               <h4 className="text-sm font-semibold text-foreground mb-1">Continuous Self-Development</h4>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Beyond formal education, I continuously expand my skills through real projects, online learning, and hands-on experimentation — currently deepening knowledge in Deep Learning, Kubernetes, and DevOps workflows.
+                Beyond formal education, I continuously expand my skills through real projects, online learning, and hands-on experimentation currently deepening knowledge in Deep Learning, Kubernetes, and DevOps workflows.
               </p>
             </div>
           </motion.div>
