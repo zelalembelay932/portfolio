@@ -42,7 +42,7 @@ export function ContactSection() {
         </motion.h2>
         <motion.p initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fiu} transition={{ duration: 0.5, delay: 0.15 }}
           className="text-muted-foreground text-lg mb-14 max-w-2xl">
-          Have a project, idea, or opportunity? I'd love to hear from you — let's build something great together.
+          Have a project, idea, or opportunity? I'd love to hear from you let's build something great together.
         </motion.p>
 
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
