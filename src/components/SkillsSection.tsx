@@ -32,7 +32,7 @@ export function SkillsSection() {
         </motion.h2>
         <motion.p initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fiu} transition={{ duration: 0.5, delay: 0.15 }}
           className="text-muted-foreground text-lg mb-12 max-w-2xl">
-          A solid technical foundation built through real-world projects — from WordPress development and Python backends to AI-powered systems.
+          A solid technical foundation built through real-world projects from WordPress development and Python backends to AI-powered systems.
         </motion.p>
 
         <div className="grid lg:grid-cols-3 gap-8">
