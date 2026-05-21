@@ -179,7 +179,77 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://yetifashiondesign.zelalem.tech",
   },
   {
-    id: 3,
+  id: 3,
+  title: "SAfire Collection",
+  client: "SAfire Collection – Cape Town Premium Fireplace Retailer",
+  category: "WordPress E-Commerce",
+  color: "orange",
+  badge: "WordPress",
+  icon: "🔥",
+  summary:
+    "Premium product catalog website for a South African fireplace and braai brand, featuring 87+ products across 11 categories, an interactive Room Calculator, and a Steel Grade education guide.",
+  description:
+    "Designed and developed a sophisticated WordPress product showcase website for SAfire Collection — Cape Town's premier fireplace, firepit, and braai grill brand with 20+ years of craftsmanship. The site blends luxury aesthetics with practical utility, giving homeowners and agents the tools to choose and enquire about the right product for their space.",
+  techs: [
+    "WordPress",
+    "Elementor",
+    "PHP",
+    "CSS3",
+    "JavaScript",
+    "WooCommerce / Custom Post Types",
+    "Contact Forms",
+  ],
+  features: [
+    "87-product catalog organized across 11 curated collections (Wood, Gas, Suspended, Braai, Pizza Ovens, etc.)",
+    "Interactive Room Volume Calculator to match fireplace size to room dimensions",
+    "Steel Grade Suitability Guide — educational content for coastal vs. inland environments",
+    "Featured Products section with filterable category tabs",
+    "Dedicated Agents page for trade and distributor network",
+    "Quote enquiry form with 24-hour response workflow",
+    "Animated stats section (20+ years, 87 products, 7-day support)",
+    "Fully responsive premium design with brand-consistent dark/fire-tone palette",
+  ],
+  outcome:
+    "A visually premium, content-rich product website that educates buyers, showcases the full collection, and channels qualified leads to the sales team through structured enquiry flows.",
+  liveUrl: "https://safirecollection.zelalem.tech/",
+},
+  {
+  id: 4,
+  title: "Excelinwork",
+  client: "Ankush Agrawal – Business Efficiency & Automation Consultant",
+  category: "WordPress Business",
+  color: "blue",
+  badge: "WordPress",
+  icon: "⚡",
+  summary:
+    "Professional consulting website for a Fiverr Level-2 automation expert, showcasing Excel, VBA, Google Sheets, and AI automation services with live case studies and a product store.",
+  description:
+    "Built a full-featured WordPress business website for Excelinwork — a business efficiency and automation consultancy with 12+ years of expertise and 513+ Fiverr reviews. The site positions the client as a premium consultant, presenting services, verified case studies, downloadable product templates, and a structured lead-capture system.",
+  techs: [
+    "WordPress",
+    "Elementor",
+    "PHP",
+    "CSS3",
+    "JavaScript",
+    "Contact Forms",
+  ],
+  features: [
+    "8 clearly defined service sections with outcome-focused copywriting",
+    "Case study portfolio with problem/solution/impact structure",
+    "Ready-made product store with pricing cards and WhatsApp CTA",
+    "Animated KPI counters (hours saved, error rate, efficiency)",
+    "Verified client testimonials section with star ratings",
+    "Multi-field lead capture form with service area and budget selectors",
+    "Sticky navigation with WhatsApp quick-contact integration",
+    "Fully responsive, conversion-optimized layout",
+  ],
+  outcome:
+    "A high-converting consulting website that communicates credibility and drives client inquiries through structured social proof, outcome-focused service pages, and direct WhatsApp lead generation.",
+  liveUrl: "https://excelinwork.zelalem.tech/",
+},
+
+  {
+    id: 5,
     title: "Jora Defense Club",
     client: "Jora Taekwondo & Martial Arts Club",
     category: "WordPress Business",
@@ -203,7 +273,7 @@ export const PROJECTS: Project[] = [
     liveUrl: "http://joradefenescclub.zelalem.tech",
   },
   {
-    id: 4,
+    id: 6,
     title: "Complaint Management System",
     client: "Web Application Project",
     category: "Python / Flask System",
@@ -227,7 +297,7 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/zelalembelay932/Complaint-Management-System",
   },
   {
-    id: 5,
+    id: 7,
     title: "Face Recognition Attendance System",
     client: "Adama Polytechnic College",
     category: "AI / Computer Vision",
@@ -250,6 +320,7 @@ export const PROJECTS: Project[] = [
       "Automated the attendance process for the college, reducing errors and saving significant manual effort daily.",
     githubUrl: "https://github.com/zelalembelay932",
   },
+  
 ];
 
 // ---- SERVICES ----
