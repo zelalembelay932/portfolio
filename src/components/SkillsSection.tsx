@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SKILL_GROUPS } from "@/lib/data";
+import { SiWordpress } from "react-icons/si";
 
 const colorMap: Record<string, string> = {
   cyan: "oklch(0.70 0.18 195)", purple: "oklch(0.68 0.22 270)",
@@ -8,6 +9,16 @@ const colorMap: Record<string, string> = {
   amber: "oklch(0.72 0.20 45)", slate: "oklch(0.65 0.03 240)",
 };
 const fiu = { hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0 } };
+
+function SkillIcon({ icon, color, size = "md" }: { icon: string; color: string; size?: "md" | "lg" }) {
+  const iconSize = size === "lg" ? "w-7 h-7" : "w-6 h-6";
+
+  if (icon === "WordPress") {
+    return <SiWordpress className={iconSize} style={{ color }} aria-label="WordPress" />;
+  }
+
+  return <span className={size === "lg" ? "text-3xl" : "text-2xl"}>{icon}</span>;
+}
 
 export function SkillsSection() {
   const [active, setActive] = useState(0);
@@ -46,7 +57,7 @@ export function SkillsSection() {
                   style={{ backdropFilter: "blur(10px)" }}
                 >
                   <div className="flex items-center gap-3">
-                    <span className="text-2xl">{g.icon}</span>
+                    <SkillIcon icon={g.icon} color={c} />
                     <div>
                       <div className="text-sm font-semibold text-foreground">{g.category}</div>
                       <div className="text-xs text-muted-foreground">{g.skills.length} skills</div>
@@ -63,7 +74,7 @@ export function SkillsSection() {
             <AnimatePresence mode="wait">
               <motion.div key={group.category} initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -16 }} transition={{ duration: 0.3 }}>
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="text-3xl">{group.icon}</span>
+                  <SkillIcon icon={group.icon} color={color} size="lg" />
                   <div>
                     <h3 className="text-xl font-bold" style={{ background: `linear-gradient(135deg, ${color}, oklch(0.68 0.22 270))`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                       {group.category}

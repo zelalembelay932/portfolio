@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { EDUCATION } from "@/lib/data";
-import { GraduationCap, MapPin, CheckCircle2, BookOpen } from "lucide-react";
+import { EDUCATION, EDUCATION_CERTIFICATES } from "@/lib/data";
+import { GraduationCap, MapPin, CheckCircle2, BookOpen, Award, ExternalLink } from "lucide-react";
 
 const fiu = { hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0 } };
 
@@ -86,6 +86,57 @@ export function EducationSection() {
               </p>
             </div>
           </motion.div>
+
+          {EDUCATION_CERTIFICATES.length > 0 && (
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fiu} transition={{ duration: 0.5, delay: 0.45 }}
+              className="mt-8">
+              <div className="flex items-center gap-3 mb-4">
+                <Award className="w-5 h-5" style={{ color: "oklch(0.70 0.18 195)" }} />
+                <h3 className="text-lg font-bold text-foreground" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                  Certificates & Portfolio Evidence
+                </h3>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                {EDUCATION_CERTIFICATES.map((certificate) => (
+                  <article key={certificate.id}
+                    className="p-5 rounded-xl border border-border/40 bg-card/40"
+                    style={{ backdropFilter: "blur(10px)" }}>
+                    <div className="flex items-start justify-between gap-4 mb-3">
+                      <div>
+                        <h4 className="text-sm font-semibold text-foreground mb-1">{certificate.title}</h4>
+                        <p className="text-xs text-muted-foreground">{certificate.issuer}</p>
+                      </div>
+                      <span className="shrink-0 text-[11px] font-mono px-2 py-1 rounded-full border border-primary/25 text-primary bg-primary/5">
+                        {certificate.period}
+                      </span>
+                    </div>
+
+                    <p className="text-xs text-muted-foreground leading-relaxed mb-4">{certificate.summary}</p>
+
+                    <div className="space-y-2 mb-4">
+                      {certificate.skills.map((skill) => (
+                        <div key={skill} className="flex items-start gap-2 text-xs text-muted-foreground">
+                          <CheckCircle2 className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: "oklch(0.68 0.20 160)" }} />
+                          {skill}
+                        </div>
+                      ))}
+                    </div>
+
+                    <a
+                      href={certificate.credentialUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 text-xs font-semibold text-primary hover:text-primary/80 transition-colors"
+                    >
+                      View certificate
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </article>
+                ))}
+              </div>
+            </motion.div>
+          )}
         </div>
       </div>
     </section>

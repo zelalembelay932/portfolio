@@ -16,6 +16,7 @@ export const PERSONAL = {
   linkedin: "https://linkedin.com/in/zelalem-belay-8a32212b0",
   github: "https://github.com/zelalembelay932",
   telegram: "https://t.me/Zelsh14",
+  upwork: "https://www.upwork.com/freelancers/~01b9d4689d4da6461e?mp_source=share",
   location: "Adama, Oromia, Ethiopia",
   available: true,
   roles: ["WordPress Developer", "Full-Stack Developer", "Web Developer", "Database & Systems Developer"],
@@ -39,7 +40,7 @@ export interface SkillGroup {
 export const SKILL_GROUPS: SkillGroup[] = [
   {
     category: "WordPress Development",
-    icon: "🔵",
+    icon: "WordPress",
     color: "cyan",
     skills: [
       { name: "WordPress CMS", level: 95 },
@@ -55,8 +56,8 @@ export const SKILL_GROUPS: SkillGroup[] = [
     icon: "🎨",
     color: "purple",
     skills: [
-      { name: "HTML5", level: 95 },
-      { name: "CSS3", level: 92 },
+      { name: "HTML5", level: 99 },
+      { name: "CSS3", level: 98 },
       { name: "JavaScript", level: 85 },
       { name: "Bootstrap", level: 90 },
       { name: "Responsive Design", level: 94 },
@@ -353,6 +354,47 @@ export const EDUCATION = {
   description:
     "Completed a comprehensive technical program focused on modern web development and database administration. Applied learning through real-world projects including management systems, websites, and AI-powered tools.",
 };
+
+export interface EducationCertificate {
+  id: number;
+  title: string;
+  issuer: string;
+  period: string;
+  credentialUrl: string;
+  summary: string;
+  skills: string[];
+}
+
+export const EDUCATION_CERTIFICATES: EducationCertificate[] = [
+  {
+    id: 1,
+    title: "Full-Stack Development 101",
+    issuer: "Professional Development Certificate",
+    period: "Completed",
+    credentialUrl:
+      "https://drive.google.com/file/d/1qNCfvBrKuiiFiWRrwFfWaEf-aPwXlMkf/view?usp=drive_link",
+    summary:
+      "Portfolio-ready certificate showing continued training in full-stack web development foundations, including frontend interfaces, backend logic, databases, and project workflow.",
+    skills: [
+      "Full-stack development fundamentals",
+      "Frontend and backend workflow",
+      "Database-driven applications",
+      "Web application structure",
+      "Project-based learning",
+    ],
+  },
+];
+
+
+
+
+
+
+
+
+
+
+
 
 // ---- TRUST METRICS ----
 export const TRUST_METRICS = [

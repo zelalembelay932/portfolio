@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, MessageCircle, Zap, Download } from "lucide-react";
-import { SiWhatsapp } from "react-icons/si";
+import { ArrowDown, Github, Linkedin, MessageCircle, Zap } from "lucide-react";
+import { SiUpwork, SiWordpress, SiWhatsapp } from "react-icons/si";
 import { PERSONAL, PROFILE_IMAGE, STATS } from "@/lib/data";
 
 const ROLE_COLORS: Record<string, string> = {
@@ -87,7 +87,8 @@ export function HeroSection() {
               <span
                 className="block mt-1"
                 style={{
-                  background: "linear-gradient(135deg, oklch(0.70 0.18 195) 0%, oklch(0.68 0.22 270) 100%)",
+                  background:
+                    "linear-gradient(135deg, oklch(0.70 0.18 195) 0%, oklch(0.68 0.22 270) 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -168,12 +169,19 @@ export function HeroSection() {
               transition={{ delay: 0.75, duration: 0.5 }}
               className="flex items-center gap-4"
             >
-              <span className="text-xs text-muted-foreground uppercase tracking-wider font-mono">Connect</span>
+              <span className="text-xs text-muted-foreground uppercase tracking-wider font-mono">
+                Connect
+              </span>
               <div className="h-px w-10 bg-border" />
               {[
                 { Icon: Github, href: PERSONAL.github, label: "GitHub" },
                 { Icon: Linkedin, href: PERSONAL.linkedin, label: "LinkedIn" },
-                { Icon: SiWhatsapp, href: PERSONAL.whatsapp, label: "WhatsApp" },
+                {
+                  Icon: SiWhatsapp,
+                  href: PERSONAL.whatsapp,
+                  label: "WhatsApp",
+                },
+                { Icon: SiUpwork, href: PERSONAL.upwork, label: "Upwork" },
               ].map(({ Icon, href, label }) => (
                 <a
                   key={label}
@@ -194,14 +202,19 @@ export function HeroSection() {
             <motion.div
               initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.4, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                delay: 0.4,
+                duration: 0.7,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="relative mb-8"
             >
               {/* Outer glow ring */}
               <div
                 className="absolute -inset-3 rounded-full"
                 style={{
-                  background: "linear-gradient(135deg, oklch(0.70 0.18 195 / 0.3), oklch(0.68 0.22 270 / 0.2))",
+                  background:
+                    "linear-gradient(135deg, oklch(0.70 0.18 195 / 0.3), oklch(0.68 0.22 270 / 0.2))",
                   filter: "blur(8px)",
                 }}
               />
@@ -209,7 +222,8 @@ export function HeroSection() {
               <div
                 className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full p-1"
                 style={{
-                  background: "linear-gradient(135deg, oklch(0.70 0.18 195), oklch(0.68 0.22 270))",
+                  background:
+                    "linear-gradient(135deg, oklch(0.70 0.18 195), oklch(0.68 0.22 270))",
                 }}
               >
                 <div className="w-full h-full rounded-full overflow-hidden border-4 border-background">
@@ -229,17 +243,34 @@ export function HeroSection() {
                 className="absolute -top-2 -right-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary/30 bg-background/90 text-xs font-medium text-primary shadow-lg"
                 style={{ backdropFilter: "blur(10px)" }}
               >
-                🔵 WordPress Expert
+                <SiWordpress className="w-3.5 h-3.5" />
+                WordPress Expert
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.1, duration: 0.4 }}
                 className="absolute -bottom-2 -left-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-accent/30 bg-background/90 text-xs font-medium shadow-lg"
-                style={{ backdropFilter: "blur(10px)", color: "oklch(0.68 0.22 270)" }}
+                style={{
+                  backdropFilter: "blur(10px)",
+                  color: "oklch(0.68 0.22 270)",
+                }}
               >
                 🐍 Python Flask Dev
               </motion.div>
+
+              {/*  <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.5, duration: 0.4 }}
+                className="absolute -bottom-2 -right-8 flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-accent/30 bg-background/90 text-xs font-medium shadow-lg"
+                style={{
+                  backdropFilter: "blur(10px)",
+                  color: "oklch(0.68 0.22 270)",
+                }}
+              >
+                ⚔️ Python Flask Dev
+              </motion.div> */}
             </motion.div>
 
             {/* Stats grid */}
@@ -258,7 +289,8 @@ export function HeroSection() {
                   <div
                     className="text-2xl font-bold"
                     style={{
-                      background: "linear-gradient(135deg, oklch(0.70 0.18 195), oklch(0.68 0.22 270))",
+                      background:
+                        "linear-gradient(135deg, oklch(0.70 0.18 195), oklch(0.68 0.22 270))",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                       backgroundClip: "text",
@@ -266,7 +298,9 @@ export function HeroSection() {
                   >
                     {s.value}
                   </div>
-                  <div className="text-xs text-muted-foreground mt-0.5">{s.label}</div>
+                  <div className="text-xs text-muted-foreground mt-0.5">
+                    {s.label}
+                  </div>
                 </div>
               ))}
             </motion.div>
@@ -280,14 +314,33 @@ export function HeroSection() {
           className="flex gap-8 whitespace-nowrap"
           style={{ animation: "marquee 30s linear infinite" }}
         >
-          {Array(3).fill(null).flatMap((_, ri) =>
-            ["WordPress", "WooCommerce", "Python", "Flask", "MySQL", "PHP", "HTML5", "CSS3", "JavaScript", "Bootstrap", "OpenCV", "Git", "Responsive Design"].map((t, i) => (
-              <span key={`${ri}-${i}`} className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-                <span className="w-1 h-1 rounded-full bg-primary/60" />
-                {t}
-              </span>
-            ))
-          )}
+          {Array(3)
+            .fill(null)
+            .flatMap((_, ri) =>
+              [
+                "WordPress",
+                "WooCommerce",
+                "Python",
+                "Flask",
+                "MySQL",
+                "PHP",
+                "HTML5",
+                "CSS3",
+                "JavaScript",
+                "Bootstrap",
+                "OpenCV",
+                "Git",
+                "Responsive Design",
+              ].map((t, i) => (
+                <span
+                  key={`${ri}-${i}`}
+                  className="inline-flex items-center gap-2 text-sm text-muted-foreground"
+                >
+                  <span className="w-1 h-1 rounded-full bg-primary/60" />
+                  {t}
+                </span>
+              )),
+            )}
         </div>
       </div>
 
@@ -299,8 +352,13 @@ export function HeroSection() {
         onClick={() => scrollTo("about")}
         className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-muted-foreground hover:text-primary transition-colors"
       >
-        <span className="text-[10px] uppercase tracking-widest font-mono">Scroll</span>
-        <motion.div animate={{ y: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.8 }}>
+        <span className="text-[10px] uppercase tracking-widest font-mono">
+          Scroll
+        </span>
+        <motion.div
+          animate={{ y: [0, 5, 0] }}
+          transition={{ repeat: Infinity, duration: 1.8 }}
+        >
           <ArrowDown className="w-4 h-4" />
         </motion.div>
       </motion.button>

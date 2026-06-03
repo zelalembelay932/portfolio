@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { MapPin, GraduationCap, Globe, Code2, Database, Layers } from "lucide-react";
+import { MapPin, GraduationCap, Code2, Database, Layers } from "lucide-react";
+import { SiWordpress } from "react-icons/si";
 import { PERSONAL, PROFILE_IMAGE } from "@/lib/data";
 
 const fiu = {
@@ -8,7 +9,7 @@ const fiu = {
 };
 
 const HIGHLIGHTS = [
-  { icon: Globe, title: "WordPress Specialist", desc: "Custom themes, WooCommerce stores, and plugin development for real business clients.", color: "oklch(0.70 0.18 195)" },
+  { icon: SiWordpress, title: "WordPress Specialist", desc: "Custom themes, WooCommerce stores, and plugin development for real business clients.", color: "oklch(0.70 0.18 195)" },
   { icon: Code2, title: "Full-Stack Systems", desc: "Python Flask web applications, REST APIs, and database-driven systems built from scratch.", color: "oklch(0.68 0.22 270)" },
   { icon: Database, title: "Database-First Thinking", desc: "MySQL schema design, relational modeling, and optimized queries for reliable, fast data.", color: "oklch(0.68 0.20 160)" },
   { icon: Layers, title: "Clean & Maintainable Code", desc: "Every project is built with structure, documentation, and long-term maintainability in mind.", color: "oklch(0.72 0.20 45)" },
